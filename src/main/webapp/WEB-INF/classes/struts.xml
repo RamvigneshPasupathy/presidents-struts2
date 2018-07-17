@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package namespace="/" name="default" extends="struts-default">
+		<action name="addcountry" class="com.sam.action.CreateAction">
+			<result name="HOME" type="redirectAction">
+				<param name="actionName">home</param>
+			</result>
+		</action>
+		<action name="home" class="com.sam.action.ReadAction">
+			<result name="HOME">/home.jsp</result>
+		</action>
+		<action name="updatepresident" class="com.sam.action.UpdateAction">
+			<result name="HOME" type="redirectAction">
+				<param name="actionName">home</param>
+			</result>
+		</action>
+		<action name="deletecountry" class="com.sam.action.DeleteAction">
+			<result name="HOME" type="redirectAction">
+				<param name="actionName">home</param>
+			</result>
+		</action>
+		<action name="setupedit" class="com.sam.action.SetupEditAction">
+			<result name="SETUPEDIT">/edit.form.jsp</result>
+		</action>
+	</package>
+</struts>
