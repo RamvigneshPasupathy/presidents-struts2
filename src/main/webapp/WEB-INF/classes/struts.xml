@@ -4,25 +4,40 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package namespace="/" name="default" extends="struts-default">
+
+		<!-- Custom Interceptors -->
+		<interceptors>
+			<interceptor name="lower"
+				class="com.sam.interceptor.CaseConvertInterceptor"></interceptor>
+		</interceptors>
+
+		<!-- Actions -->
 		<action name="addcountry" class="com.sam.action.CreateAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="lower"></interceptor-ref>
 			<result name="HOME" type="redirectAction">
 				<param name="actionName">home</param>
 			</result>
 		</action>
+
 		<action name="home" class="com.sam.action.ReadAction">
 			<result name="HOME">/home.jsp</result>
 		</action>
 		<action name="updatepresident" class="com.sam.action.UpdateAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="lower"></interceptor-ref>
 			<result name="input">/edit.form.jsp</result>
 			<result name="HOME" type="redirectAction">
 				<param name="actionName">home</param>
 			</result>
 		</action>
+		
 		<action name="deletecountry" class="com.sam.action.DeleteAction">
 			<result name="HOME" type="redirectAction">
 				<param name="actionName">home</param>
 			</result>
 		</action>
+		
 		<action name="setupedit" class="com.sam.action.SetupEditAction">
 			<result name="SETUPEDIT">/edit.form.jsp</result>
 		</action>

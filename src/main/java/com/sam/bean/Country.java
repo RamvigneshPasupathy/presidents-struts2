@@ -21,7 +21,7 @@ public class Country {
 	}
 
 	public void setName(String name) {
-		this.name = name.toLowerCase();
+		this.name = name;
 	}
 
 	public String getPresident() {
@@ -29,7 +29,7 @@ public class Country {
 	}
 
 	public void setPresident(String president) {
-		this.president = president.toLowerCase();
+		this.president = president;
 	}
 	
 	@Override
