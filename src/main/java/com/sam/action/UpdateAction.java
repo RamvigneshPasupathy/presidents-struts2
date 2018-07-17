@@ -19,6 +19,13 @@ public class UpdateAction extends ActionSupport {
 		this.country = country;
 	}
 	
+	// reference: https://dzone.com/tutorials/java/struts-2/struts-2-example/struts-2-validation-example-1.html
+	public void validate() {
+        if (country.getPresident().trim().length() == 0) {
+            addFieldError("country.president", "president name cannot be empty");
+        }
+    }
+	
 	@Override
 	public String execute() throws Exception {
 		dao = new CountryDAO();

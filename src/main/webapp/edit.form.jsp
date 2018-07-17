@@ -8,6 +8,9 @@
 	padding: 5px;
 	background-color: #f0f0f0;
 }
+.errorMessage {
+    color: red;
+}
 </style>
 </head>
 <body>

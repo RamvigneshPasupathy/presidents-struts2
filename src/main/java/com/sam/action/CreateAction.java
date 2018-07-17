@@ -21,7 +21,6 @@ public class CreateAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		dao = new CountryDAO();
-
 		try {
 			dao.addCountry(country);
 		} catch (Exception e) {

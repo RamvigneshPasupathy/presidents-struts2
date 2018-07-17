@@ -55,8 +55,8 @@
 	<h1>President Form</h1>
 
 	<s:form action="addcountry.action" method="post">
-		<s:textfield label="Country" name="country.name" />
-		<s:textfield label="President" name="country.president" />
+		<s:textfield label="Country" name="country.name" required="true" />
+		<s:textfield label="President" name="country.president" required="true" />
 		<s:submit cssClass="button" value="Add Country" />
 	</s:form>
 	<h2>Presidents List</h2>
